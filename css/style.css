@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px; 
+  flex: 1;
+  overflow: hidden;
+}
+
+header {
+  background-color: #003366;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+nav ul.nav-center {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+}
+
+
+nav a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  display: flex;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+.hero {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 30px;
+  background: linear-gradient(to right, #cce0ff, #e6f0ff);
+}
+
+.hero img {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.quote {
+  max-width: 400px;
+}
+
+.quote h1 {
+  font-size: 1.8rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.quote p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.tips {
+  flex: 1;
+  background: #f9f0ff;
+  padding: 20px;
+  text-align: center;
+  border-top: 3px dashed #ccc;
+  border-bottom: 3px dashed #ccc;
+}
+
+.tips h2 {
+  font-size: 1.6rem;
+  color: #5c00a3;
+}
+
+#tip-text {
+  font-size: 1rem;
+  font-style: italic;
+  margin: 10px 0 20px;
+  color: #333;
+}
+
+.tips button {
+  background-color: #5c00a3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tips button:hover {
+  background-color: #7f25cc;
+}
+
+.students {
+  flex: 1;
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.students h2 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: #003366;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery img {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+
+#course-description {
+  background-color: #fff8dc;
+  padding: 20px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+#course-title {
+  color: #cc3300;
+  font-size: 1.3rem;
+}
+
+#course-text {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+#course-description button {
+  background-color: #003366;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+}
+
+#course-description button:hover {
+  background-color: #0055aa;
+}
+
+.course-page {
+  min-height: calc(100vh - 120px);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.course-intro h1 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.course-intro p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
+.hidden {
+  display: none;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 10px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.lessons {
+  padding: 40px 20px;
+  background: #f5f5f5;
+}
+
+.lessons h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.lesson-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.lesson-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 280px;
+  transition: transform 0.2s;
+}
+
+.lesson-card:hover {
+  transform: translateY(-5px);
+}
+
+.lesson-card h3 {
+  font-size: 1.2rem;
+  color: #003366;
+}
+
+.lesson-card p {
+  font-size: 0.95rem;
+  margin: 10px 0;
+}
+
+.lesson-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #003366;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.lesson-button:hover {
+  background: #005599;
+}
+
+body {
+  animation: backgroundMove 10s ease-in-out infinite;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.hero {
+  background: url('your-hero-image.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+ 
+.lesson-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lesson-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  background: #f9f9f9;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#nextBtn {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.reviews {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+}
+
+.reviews h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #003366;
+  font-weight: 700;
+}
+
+.review-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.review-card {
+  background-color: #fff;
+  width: 280px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+}
+
+.review-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #0077cc;
+}
+
+.review-card h3 {
+  font-size: 1.3rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.review-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.mg-10 { 
+  margin-top: 10px;
+}

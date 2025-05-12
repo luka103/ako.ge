@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Science Quiz</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-center">
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="../html/science.html">ანტი ლობიო</a></li>
+          </ul>
+        </li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="quiz-page">
+    <section class="quiz-container">
+      <h1>Science Quiz</h1>
+      <form id="quiz-form">
+        <div class="question">
+          <h2>1. როცა ორი type-c შესაერთებელი აქვს ლეპტოპის სატენს სად აერთებ ?</h2>
+          <label>
+            <input type="radio" name="q1" value="F1"> ნებისმიერში
+          </label><br>
+          <label>
+            <input type="radio" name="q1" value="F11"> სადაც სატენის ნიშანია
+          </label><br>
+          <label>
+            <input type="radio" name="q1" value="F111"> hdmi პორტში
+          </label><br>
+          <label>
+            <input type="radio" name="q1" value="T1"> ეგ რო იცოდე ლობიო ხო არ იქნებოდი
+          </label><br>
+        </div>
+
+        <div class="question">
+          <h2>2. ალექსი გეუბნება ორი ტაისი გადამიბი და მომეციო, რას აკეთებ?</h2>
+          <label>
+            <input type="radio" name="q2" value="F2"> აბავ ორ ტაისს და აძლევ
+          </label><br>
+          <label>
+            <input type="radio" name="q2" value="T2"> უკუღმა აბავ ტაისებს
+          </label><br>
+          <label>
+            <input type="radio" name="q2" value="F22"> უყურებ ისე თითქოს ვერ გაიგე რა თქვა
+          </label><br>
+        </div>
+
+        <div class="question">
+          <h2>3. კლავიატურა არ მუშაობს და ელემენტები უკვე გამოცვალე, რისი ბრალი შეიძლება იყოს?</h2>
+          <label>
+            <input type="radio" name="q3" value="F3"> სწორედ ჩადო ელემენტები
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="T3"> თქვა რო კლავიატურა აღარ მუშაობს
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="F33"> არასწორედ დაჯეკო კაბელი
+          </label><br>
+        </div>
+
+        <button type="submit" class="lesson-button mg-10">Submit Quiz</button>
+      </form>
+
+      <a href="science.html" class="lesson-button mg-10">Go Back to Courses</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 ako.ge. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById("quiz-form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      let score = 0;
+      const answers = {
+        q1: "T1",
+        q2: "T2",
+        q3: "Mitochondria",
+      };
+
+      for (let question in answers) {
+        const selectedAnswer = form.querySelector(`input[name=${question}]:checked`);
+        if (selectedAnswer && selectedAnswer.value === answers[question]) {
+          score++;
+        }
+      }
+
+      alert(`Your score is: ${score}/3`);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ako.ge</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header>
+<nav>
+  <ul class="nav-center">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+  <a href="#">Courses</a>
+  <ul class="dropdown-content">
+    <li><a href="./html/science.html">ანტი ლობიო</a></li>
+  </ul>
+</li>
+    <li><a href="review.html">Reviews</a></li>
+    <li><a href="./html/about.html">About</a></li>
+
+  </ul>
+</nav>
+
+  </header>
+
+  <main class="page-content">
+    <section class="hero">
+      <img src="/img/1.jpg" alt="Ako's Photo">
+      <div class="quote">
+        <h1>გაიცანით აკო</h1>
+        <p>"ალექსი (ყაჩაღი პავლეს ძმის შვილთაშვილი) მზადაა შეგასწავლოთ ინფორმაციული ტექნოლოგიების ყველა დეტალი"</p>
+      </div>
+    </section>
+
+    <section class="tips">
+      <h2>Ako's Prefered Phrases</h2>
+      <p id="tip-text">“ცუდას რათ უნდა მტრობა, კარგია მუდამ მტრიანი”</p>
+      <button onclick="nextTip()">Next Tip</button>
+    </section>
+
+    <section class="students">
+      <h2>Star Pupils</h2>
+      <div class="gallery">
+        <img src="/img/2.jpg" alt="Student 1" />
+        <img src="/img/3.jpg" alt="Student 2" />
+        <img src="/img/4.jpg" alt="Student 3" />
+        <img src="/img/5.jpg" alt="Student 4" />
+      </div>
+    </section>
+
+    <section id="course-description" class="hidden">
+      <h3 id="course-title">Course Title</h3>
+      <p id="course-text">Course description appears here.</p>
+      <button onclick="hideCourse()">Close</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ako.ge — Empowering minds, one lesson at a time.</p>
+  </footer>
+
+  <script>
+    const courseDesc = document.getElementById('course-description');
+    const title = document.getElementById('course-title');
+    const text = document.getElementById('course-text');
+
+    function showCourse(courseName) {
+      const descriptions = {
+        Math: "Master algebra, geometry, and problem-solving.",
+        History: "Explore the past and understand our present.",
+        Science: "Discover how the world works through experiments."
+      };
+      title.textContent = courseName;
+      text.textContent = descriptions[courseName] || "No description available.";
+      courseDesc.classList.remove('hidden');
+    }
+
+    function hideCourse() {
+      courseDesc.classList.add('hidden');
+    }
+
+    const tips = [
+      "“ლაპარაკი ლაპარაკსა, ცხენი გაჰყვა ამხანაგსა”",
+      "“კურდღელმა რამდენიც იძინა, იმდენი ირბინაო”",
+      "“თითო ცვარითა ტბა შედგაო”"
+    ];
+    let tipIndex = 0;
+    function nextTip() {
+      tipIndex = (tipIndex + 1) % tips.length;
+      document.getElementById('tip-text').textContent = tips[tipIndex];
+    }
+  </script>
+</body>
+</html>
